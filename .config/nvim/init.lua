@@ -1,3 +1,0 @@
--- :PackerSync
-
-require("massimilianofalsini")
