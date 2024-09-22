@@ -1,21 +1,12 @@
 #!/bin/sh
 
-# xorg
-sudo pacman -S xorg-server --noconfirm
-sudo pacman -S xorg-xinit --noconfirm 
-sudo pacman -S xorg-xrandr --noconfirm
-echo exec i3 > ~/.xinitrc 
+chmox +x ./scripts/alacritty.sh && ./scripts/alacritty.sh
 
-# alacritty
-sudo pacman -S alacritty --noconfirm
+chmox +x ./scripts/i3-wm.sh && ./scripts/i3-wm.sh
 
-# i3-wm
-sudo pacman -S i3-wm --noconfirm
-cp -r ./config/i3 ~/.config
+chmox +x ./scripts/neovim.sh && ./scripts/neovim.sh
 
-# rofi
-sudo pacman -S rofi --noconfirm
+chmox +x ./scripts/rofi.sh && ./scripts/rofi.sh
 
-# neovim
-sudo pacman -S neovim --noconfirm
-cp -r ./config/nvim ~/.config
+chmox +x ./scripts/xorg.sh && ./scripts/xorg.sh
+
