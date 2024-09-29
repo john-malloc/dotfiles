@@ -7,6 +7,7 @@ sudo pacman -S \
   feh \
   i3-wm \
   neovim \
+  picom \
   rofi \
   wget \
   xorg-server xorg-xinit xorg-xrandr \

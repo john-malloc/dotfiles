@@ -186,15 +186,22 @@ bindsym $mod+r mode "resize"
 
 set $el_yll #ffff00
 
+exec --no-startup-id \
+xrandr --output Virtual-1 --mode 1920x1080 --rate 60 && \
+feh --bg-scale ~/wallpaper.jpg && \
+picom -b
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        i3bar_command i3bar --transparency 
         position top
         # statu_command i3status
+	padding 0px 0px 0px 10px
 	colors {
-	        background #000000
-		statusline #ffffff
-		separator  #666666 
+	        background #00000000
+		statusline #ffffff00
+		separator  #66666600 
                 #colorclass        border  backgr. text	
 		focused_workspace  #4c7899 $el_yll #000000
 		active_workspace   #333333 #5f676a #ffffff
@@ -204,10 +211,9 @@ bar {
 	}
 }
 
-exec --no-startup-id xrandr --output Virtual-1 --mode 1920x1080 --rate 60
-exec --no-startup-id feh --bg-max ~/wallpaper.jpg
-
-default_border pixel 5
+# default_border pixel 5
+default_border pixel 0
+gaps inner 10
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff $el_yll   $el_yll 
@@ -217,6 +223,3 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
-
-gaps inner 10
-
